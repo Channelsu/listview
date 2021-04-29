@@ -24,7 +24,20 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('リストビューサンプル'),
       ),
-      body: Text('ハロー'),
+      body: _buildListView(),
+    );
+  }
+
+  Widget _buildListView() {
+    return ListView.builder(
+      itemCount: 10,
+      itemBuilder: (_, index) {
+        return ListTile(
+          title: Text('${index}番'),
+          subtitle: ,
+          leading: Icon(Icons.thumb_up),
+        );
+      },
     );
   }
 }
