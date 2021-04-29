@@ -34,8 +34,9 @@ class MyHomePage extends StatelessWidget {
       itemBuilder: (_, index) {
         return ListTile(
           title: Text('${index}番'),
-          subtitle: ,
+          subtitle: Text('サブタイトル'),
           leading: Icon(Icons.thumb_up),
+          trailing: Icon(Icons.arrow_forward_ios),
         );
       },
     );
