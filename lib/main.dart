@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:listview/details.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,19 +25,28 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('リストビューサンプル'),
       ),
-      body: _buildListView(),
+      body: _buildListView(context),
     );
   }
 
-  Widget _buildListView() {
+  Widget _buildListView(BuildContext context) {
     return ListView.builder(
       itemCount: 10,
       itemBuilder: (_, index) {
+        // ListTileをモデルで追加してみる
         return ListTile(
           title: Text('${index}番'),
           subtitle: Text('サブタイトル'),
           leading: Icon(Icons.thumb_up),
           trailing: Icon(Icons.arrow_forward_ios),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailPage(index)
+              )
+            );
+          },
         );
       },
     );
