@@ -38,15 +38,17 @@ class MyHomePage extends StatelessWidget {
           title: Text('${index}番'),
           subtitle: Text('サブタイトル'),
           leading: Icon(Icons.thumb_up),
-          trailing: Icon(Icons.arrow_forward_ios),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => DetailPage(index)
-              )
-            );
-          },
+          trailing: IconButton(
+            icon: Icon(Icons.arrow_forward_ios),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(index)
+                )
+              );
+            },
+          ),
         );
       },
     );
