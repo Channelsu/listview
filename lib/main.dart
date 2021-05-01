@@ -34,20 +34,22 @@ class MyHomePage extends StatelessWidget {
       itemCount: 10,
       itemBuilder: (_, index) {
         // ListTileをモデルで追加してみる
-        return ListTile(
-          title: Text('${index}番'),
-          subtitle: Text('サブタイトル'),
-          leading: Icon(Icons.thumb_up),
-          trailing: IconButton(
-            icon: Icon(Icons.arrow_forward_ios),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DetailPage(index)
-                )
-              );
-            },
+        return Card(
+          child: ListTile(
+            title: Text('${index}番'),
+            subtitle: Text('サブタイトル'),
+            leading: Icon(Icons.thumb_up),
+            trailing: IconButton(
+              icon: Icon(Icons.arrow_forward_ios),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailPage(index)
+                  )
+                );
+              },
+            ),
           ),
         );
       },
